@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WypozycalniaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Autor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imie" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Nazwisko" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Literatura">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Id_Autor" />
+            <PropertyRef Name="Id_Wydawnictwo" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kategoria" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="Tytul" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_Autor" Type="int" Nullable="false" />
+          <Property Name="Id_Wydawnictwo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Uzytkownicy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imie" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Nazwisko" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adres" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nr_Telefonu" Type="varchar" MaxLength="9" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wydawnictwo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wypozyczona_literatura">
+          <Key>
+            <PropertyRef Name="Id_Uzytkownika" />
+            <PropertyRef Name="Id_Literatury" />
+          </Key>
+          <Property Name="Id_Uzytkownika" Type="int" Nullable="false" />
+          <Property Name="Id_Literatury" Type="int" Nullable="false" />
+          <Property Name="Data_Wydania" Type="date" />
+          <Property Name="Okres_Wypozyczenia" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zwrot_literatury">
+          <Key>
+            <PropertyRef Name="Id_Uzytkownika" />
+            <PropertyRef Name="Id_Literatury" />
+          </Key>
+          <Property Name="Id_Uzytkownika" Type="int" Nullable="false" />
+          <Property Name="Id_Literatury" Type="int" Nullable="false" />
+          <Property Name="Data_Zwrotu" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'Odpowiada' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="Odpowiada" />-->
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'Odpowiada1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="Odpowiada1" />-->
+        <Association Name="Pisze">
+          <End Role="Autor" Type="Self.Autor" Multiplicity="1" />
+          <End Role="Literatura" Type="Self.Literatura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Autor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Literatura">
+              <PropertyRef Name="Id_Autor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Wydaje">
+          <End Role="Wydawnictwo" Type="Self.Wydawnictwo" Multiplicity="1" />
+          <End Role="Literatura" Type="Self.Literatura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Wydawnictwo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Literatura">
+              <PropertyRef Name="Id_Wydawnictwo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Wypozycza">
+          <End Role="Uzytkownicy" Type="Self.Uzytkownicy" Multiplicity="1" />
+          <End Role="Wypozyczona_literatura" Type="Self.Wypozyczona_literatura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uzytkownicy">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Wypozyczona_literatura">
+              <PropertyRef Name="Id_Uzytkownika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Zwraca">
+          <End Role="Uzytkownicy" Type="Self.Uzytkownicy" Multiplicity="1" />
+          <End Role="Zwrot_literatury" Type="Self.Zwrot_literatury" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uzytkownicy">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Zwrot_literatury">
+              <PropertyRef Name="Id_Uzytkownika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WypozycalniaModelStoreContainer">
+          <EntitySet Name="Autor" EntityType="Self.Autor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Literatura" EntityType="Self.Literatura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uzytkownicy" EntityType="Self.Uzytkownicy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wydawnictwo" EntityType="Self.Wydawnictwo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wypozyczona_literatura" EntityType="Self.Wypozyczona_literatura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zwrot_literatury" EntityType="Self.Zwrot_literatury" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="Pisze" Association="Self.Pisze">
+            <End Role="Autor" EntitySet="Autor" />
+            <End Role="Literatura" EntitySet="Literatura" />
+          </AssociationSet>
+          <AssociationSet Name="Wydaje" Association="Self.Wydaje">
+            <End Role="Wydawnictwo" EntitySet="Wydawnictwo" />
+            <End Role="Literatura" EntitySet="Literatura" />
+          </AssociationSet>
+          <AssociationSet Name="Wypozycza" Association="Self.Wypozycza">
+            <End Role="Uzytkownicy" EntitySet="Uzytkownicy" />
+            <End Role="Wypozyczona_literatura" EntitySet="Wypozyczona_literatura" />
+          </AssociationSet>
+          <AssociationSet Name="Zwraca" Association="Self.Zwraca">
+            <End Role="Uzytkownicy" EntitySet="Uzytkownicy" />
+            <End Role="Zwrot_literatury" EntitySet="Zwrot_literatury" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WypozycalniaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Autor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imie" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Literatura" Relationship="Self.Pisze" FromRole="Autor" ToRole="Literatura" />
+        </EntityType>
+        <EntityType Name="Literatura">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Id_Autor" />
+            <PropertyRef Name="Id_Wydawnictwo" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kategoria" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tytul" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id_Autor" Type="Int32" Nullable="false" />
+          <Property Name="Id_Wydawnictwo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Autor" Relationship="Self.Pisze" FromRole="Literatura" ToRole="Autor" />
+          <NavigationProperty Name="Wydawnictwo" Relationship="Self.Wydaje" FromRole="Literatura" ToRole="Wydawnictwo" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Uzytkownicy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imie" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nr_Telefonu" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Wypozyczona_literatura" Relationship="Self.Wypozycza" FromRole="Uzytkownicy" ToRole="Wypozyczona_literatura" />
+          <NavigationProperty Name="Zwrot_literatury" Relationship="Self.Zwraca" FromRole="Uzytkownicy" ToRole="Zwrot_literatury" />
+        </EntityType>
+        <EntityType Name="Wydawnictwo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Literatura" Relationship="Self.Wydaje" FromRole="Wydawnictwo" ToRole="Literatura" />
+        </EntityType>
+        <EntityType Name="Wypozyczona_literatura">
+          <Key>
+            <PropertyRef Name="Id_Uzytkownika" />
+            <PropertyRef Name="Id_Literatury" />
+          </Key>
+          <Property Name="Id_Uzytkownika" Type="Int32" Nullable="false" />
+          <Property Name="Id_Literatury" Type="Int32" Nullable="false" />
+          <Property Name="Data_Wydania" Type="DateTime" Precision="0" />
+          <Property Name="Okres_Wypozyczenia" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Uzytkownicy" Relationship="Self.Wypozycza" FromRole="Wypozyczona_literatura" ToRole="Uzytkownicy" />
+        </EntityType>
+        <EntityType Name="Zwrot_literatury">
+          <Key>
+            <PropertyRef Name="Id_Uzytkownika" />
+            <PropertyRef Name="Id_Literatury" />
+          </Key>
+          <Property Name="Id_Uzytkownika" Type="Int32" Nullable="false" />
+          <Property Name="Id_Literatury" Type="Int32" Nullable="false" />
+          <Property Name="Data_Zwrotu" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Uzytkownicy" Relationship="Self.Zwraca" FromRole="Zwrot_literatury" ToRole="Uzytkownicy" />
+        </EntityType>
+        <Association Name="Pisze">
+          <End Role="Autor" Type="Self.Autor" Multiplicity="1" />
+          <End Role="Literatura" Type="Self.Literatura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Autor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Literatura">
+              <PropertyRef Name="Id_Autor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Wydaje">
+          <End Role="Wydawnictwo" Type="Self.Wydawnictwo" Multiplicity="1" />
+          <End Role="Literatura" Type="Self.Literatura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Wydawnictwo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Literatura">
+              <PropertyRef Name="Id_Wydawnictwo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Wypozycza">
+          <End Role="Uzytkownicy" Type="Self.Uzytkownicy" Multiplicity="1" />
+          <End Role="Wypozyczona_literatura" Type="Self.Wypozyczona_literatura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uzytkownicy">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Wypozyczona_literatura">
+              <PropertyRef Name="Id_Uzytkownika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Zwraca">
+          <End Role="Uzytkownicy" Type="Self.Uzytkownicy" Multiplicity="1" />
+          <End Role="Zwrot_literatury" Type="Self.Zwrot_literatury" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uzytkownicy">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Zwrot_literatury">
+              <PropertyRef Name="Id_Uzytkownika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WypozycalniaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Autor" EntityType="Self.Autor" />
+          <EntitySet Name="Literatura" EntityType="Self.Literatura" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Uzytkownicy" EntityType="Self.Uzytkownicy" />
+          <EntitySet Name="Wydawnictwo" EntityType="Self.Wydawnictwo" />
+          <EntitySet Name="Wypozyczona_literatura" EntityType="Self.Wypozyczona_literatura" />
+          <EntitySet Name="Zwrot_literatury" EntityType="Self.Zwrot_literatury" />
+          <AssociationSet Name="Pisze" Association="Self.Pisze">
+            <End Role="Autor" EntitySet="Autor" />
+            <End Role="Literatura" EntitySet="Literatura" />
+          </AssociationSet>
+          <AssociationSet Name="Wydaje" Association="Self.Wydaje">
+            <End Role="Wydawnictwo" EntitySet="Wydawnictwo" />
+            <End Role="Literatura" EntitySet="Literatura" />
+          </AssociationSet>
+          <AssociationSet Name="Wypozycza" Association="Self.Wypozycza">
+            <End Role="Uzytkownicy" EntitySet="Uzytkownicy" />
+            <End Role="Wypozyczona_literatura" EntitySet="Wypozyczona_literatura" />
+          </AssociationSet>
+          <AssociationSet Name="Zwraca" Association="Self.Zwraca">
+            <End Role="Uzytkownicy" EntitySet="Uzytkownicy" />
+            <End Role="Zwrot_literatury" EntitySet="Zwrot_literatury" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WypozycalniaModelStoreContainer" CdmEntityContainer="WypozycalniaEntities">
+          <EntitySetMapping Name="Autor">
+            <EntityTypeMapping TypeName="WypozycalniaModel.Autor">
+              <MappingFragment StoreEntitySet="Autor">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Literatura">
+            <EntityTypeMapping TypeName="WypozycalniaModel.Literatura">
+              <MappingFragment StoreEntitySet="Literatura">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Kategoria" ColumnName="Kategoria" />
+                <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+                <ScalarProperty Name="Id_Autor" ColumnName="Id_Autor" />
+                <ScalarProperty Name="Id_Wydawnictwo" ColumnName="Id_Wydawnictwo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="WypozycalniaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Uzytkownicy">
+            <EntityTypeMapping TypeName="WypozycalniaModel.Uzytkownicy">
+              <MappingFragment StoreEntitySet="Uzytkownicy">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Nr_Telefonu" ColumnName="Nr_Telefonu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wydawnictwo">
+            <EntityTypeMapping TypeName="WypozycalniaModel.Wydawnictwo">
+              <MappingFragment StoreEntitySet="Wydawnictwo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wypozyczona_literatura">
+            <EntityTypeMapping TypeName="WypozycalniaModel.Wypozyczona_literatura">
+              <MappingFragment StoreEntitySet="Wypozyczona_literatura">
+                <ScalarProperty Name="Id_Uzytkownika" ColumnName="Id_Uzytkownika" />
+                <ScalarProperty Name="Id_Literatury" ColumnName="Id_Literatury" />
+                <ScalarProperty Name="Data_Wydania" ColumnName="Data_Wydania" />
+                <ScalarProperty Name="Okres_Wypozyczenia" ColumnName="Okres_Wypozyczenia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zwrot_literatury">
+            <EntityTypeMapping TypeName="WypozycalniaModel.Zwrot_literatury">
+              <MappingFragment StoreEntitySet="Zwrot_literatury">
+                <ScalarProperty Name="Id_Uzytkownika" ColumnName="Id_Uzytkownika" />
+                <ScalarProperty Name="Id_Literatury" ColumnName="Id_Literatury" />
+                <ScalarProperty Name="Data_Zwrotu" ColumnName="Data_Zwrotu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
