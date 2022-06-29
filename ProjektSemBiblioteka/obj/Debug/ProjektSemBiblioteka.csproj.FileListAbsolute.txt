@@ -1,0 +1,16 @@
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\bin\Debug\ProjektSemBiblioteka.exe.config
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\bin\Debug\ProjektSemBiblioteka.exe
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\bin\Debug\ProjektSemBiblioteka.pdb
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka.csproj.AssemblyReference.cache
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka.csproj.SuggestedBindingRedirects.cache
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\Main.g.cs
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\App.g.cs
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka_MarkupCompile.cache
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka_MarkupCompile.lref
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\Main.baml
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka.g.resources
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka.Properties.Resources.resources
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka.csproj.GenerateResource.cache
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka.csproj.CoreCompileInputs.cache
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka.exe
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka.pdb
