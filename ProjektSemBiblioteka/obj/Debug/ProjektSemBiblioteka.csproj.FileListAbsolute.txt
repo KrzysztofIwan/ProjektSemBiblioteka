@@ -19,3 +19,4 @@ E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\bin\Debug\EntityFramework.SqlSer
 E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\bin\Debug\EntityFramework.xml
 E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\bin\Debug\EntityFramework.SqlServer.xml
 E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka.csproj.CopyComplete
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka_Content.g.cs

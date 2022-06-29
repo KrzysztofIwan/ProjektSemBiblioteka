@@ -11,20 +11,48 @@ namespace ProjektSemBiblioteka.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Runtime.CompilerServices;
     
-    public partial class Autor
+    public partial class Autor: INotifyPropertyChanged
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Autor()
         {
             this.Literatura = new HashSet<Literatura>();
         }
+
+        private int id;
+        private string imie;
+        private string nazwisko;
     
-        public int Id { get; set; }
-        public string Imie { get; set; }
-        public string Nazwisko { get; set; }
+        public int Id { get => id; set 
+            {
+                id = value;
+                OnPropertyChanged(nameof(Id));
+             } 
+        }
+        public string Imie { get => imie; set
+            {
+                imie = value;
+                OnPropertyChanged(nameof(Imie));
+            }
+        }
+        public string Nazwisko { get => nazwisko; set
+            {
+                nazwisko = value;
+                OnPropertyChanged(nameof(Nazwisko));
+            }
+        }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Literatura> Literatura { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
