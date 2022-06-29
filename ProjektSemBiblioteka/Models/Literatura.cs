@@ -11,16 +11,57 @@ namespace ProjektSemBiblioteka.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Literatura
+    using System.ComponentModel;
+    using System.Runtime.CompilerServices;
+
+    public partial class Literatura : INotifyPropertyChanged
     {
-        public int Id { get; set; }
-        public string Kategoria { get; set; }
-        public string Tytul { get; set; }
-        public int Id_Autor { get; set; }
-        public int Id_Wydawnictwo { get; set; }
+        private int id;
+        private string kategoria;
+        private string tytul;
+        private int idAutor;
+        private int idWydawnictwo;
+
+
+        public int Id { get => id; set 
+            {
+                id = value;
+                OnPropertyChanged(nameof(Id));
+            }                
+        }
+        public string Kategoria { get => kategoria; set
+            {
+                kategoria = value;
+                OnPropertyChanged(nameof(Kategoria));
+            }
+        }
+        public string Tytul { get => tytul; set
+            {
+                tytul = value;
+                OnPropertyChanged(nameof(Tytul));
+            }
+        }
+        public int Id_Autor { get => idAutor; set
+            {
+                idAutor = value;
+                OnPropertyChanged(nameof(Id_Autor));
+            }
+        }
+        public int Id_Wydawnictwo { get => Id_Wydawnictwo; set
+            {
+                idWydawnictwo = value;
+                OnPropertyChanged(nameof(Id_Wydawnictwo));
+            }
+        }
     
         public virtual Autor Autor { get; set; }
         public virtual Wydawnictwo Wydawnictwo { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
