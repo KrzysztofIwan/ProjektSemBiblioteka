@@ -14,3 +14,8 @@ E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka.c
 E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka.csproj.CoreCompileInputs.cache
 E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka.exe
 E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka.pdb
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\bin\Debug\EntityFramework.dll
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\bin\Debug\EntityFramework.SqlServer.dll
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\bin\Debug\EntityFramework.xml
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\bin\Debug\EntityFramework.SqlServer.xml
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka.csproj.CopyComplete
