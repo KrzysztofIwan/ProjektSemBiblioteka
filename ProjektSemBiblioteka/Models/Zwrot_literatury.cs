@@ -11,13 +11,41 @@ namespace ProjektSemBiblioteka.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Zwrot_literatury
+    using System.ComponentModel;
+    using System.Runtime.CompilerServices;
+
+    public partial class Zwrot_literatury : INotifyPropertyChanged
     {
-        public int Id_Uzytkownika { get; set; }
-        public int Id_Literatury { get; set; }
-        public Nullable<System.DateTime> Data_Zwrotu { get; set; }
+        private int idUzytkownika;
+        private int idLiteratury;
+        private DateTime dataZwrotu;
+
+        public int Id_Uzytkownika { get => idUzytkownika; set
+            {
+                idUzytkownika = value;
+                OnPropertyChanged(nameof(Id_Uzytkownika));
+            }
+        }
+        public int Id_Literatury { get => idLiteratury; set
+            {
+                idLiteratury = value;
+                OnPropertyChanged(nameof(Id_Literatury));
+            }
+        }
+        public Nullable<System.DateTime> Data_Zwrotu { get => dataZwrotu; set
+            {
+                dataZwrotu = (DateTime)value;
+                OnPropertyChanged(nameof(Data_Zwrotu));
+            }
+        }
     
         public virtual Uzytkownicy Uzytkownicy { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
