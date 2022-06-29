@@ -14,7 +14,7 @@ namespace ProjektSemBiblioteka.Models
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
 
-    public partial class Uzytkownicy
+    public partial class Uzytkownicy : INotifyPropertyChanged
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Uzytkownicy()
