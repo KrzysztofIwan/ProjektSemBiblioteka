@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="Zwrot_literaturyDetails" Height="450" Width="800">
     <Grid>
-        
+        <ListView ItemsSource="{Binding ZwrotList}">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Id_Uzytkownika" DisplayMemberBinding="{Binding Id_Uzytkownika}"/>
+                        <GridViewColumn Header="Id_Literatury" DisplayMemberBinding="{Binding Id_Literatury}"/>
+                        <GridViewColumn Header="Data_Zwrotu" DisplayMemberBinding="{Binding Data_Zwrotu}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>
