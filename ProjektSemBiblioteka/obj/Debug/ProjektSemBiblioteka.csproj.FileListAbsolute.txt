@@ -24,3 +24,11 @@ E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\AutorDetails.g.c
 E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\AutorDetails.baml
 E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\LiteraturaDetails.g.cs
 E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\LiteraturaDetails.baml
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\UzytkownicyDetails.g.cs
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\WydawnictwoDetails.g.cs
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\Wypozyczona_literaturaDetails.g.cs
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\Zwrot_literaturyDetails.g.cs
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\UzytkownicyDetails.baml
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\WydawnictwoDetails.baml
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\Wypozyczona_literaturaDetails.baml
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\Zwrot_literaturyDetails.baml
