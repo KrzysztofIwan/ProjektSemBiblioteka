@@ -108,8 +108,12 @@
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AutorViewModel.cs" />
+    <Compile Include="ViewModels\LiteraturaViewModel.cs" />
     <Compile Include="Views\AutorDetails.xaml.cs">
       <DependentUpon>AutorDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LiteraturaDetails.xaml.cs">
+      <DependentUpon>LiteraturaDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Main.xaml.cs">
       <DependentUpon>Main.xaml</DependentUpon>
@@ -152,6 +156,10 @@
   <ItemGroup />
   <ItemGroup>
     <Page Include="Views\AutorDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LiteraturaDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

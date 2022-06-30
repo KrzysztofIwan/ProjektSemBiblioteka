@@ -1,19 +1,21 @@
-﻿<Window x:Class="ProjektSemBiblioteka.Views.AutorDetails"
+﻿<Window x:Class="ProjektSemBiblioteka.Views.LiteraturaDetails"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektSemBiblioteka.Views"
         mc:Ignorable="d"
-        Title="AutorDetails" Height="450" Width="800">
+        Title="LiteraturaDetails" Height="450" Width="800">
     <Grid>
-        <ListView ItemsSource="{Binding AutorList}">
+        <ListView ItemsSource="{Binding LiteraturaList}">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
                         <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
-                        <GridViewColumn Header="Imie" DisplayMemberBinding="{Binding Imie}"/>
-                        <GridViewColumn Header="Nazwisko" DisplayMemberBinding="{Binding Nazwisko}"/>
+                        <GridViewColumn Header="Kategoria" DisplayMemberBinding="{Binding Kategoria}"/>
+                        <GridViewColumn Header="Tytul" DisplayMemberBinding="{Binding Tytul}"/>
+                        <GridViewColumn Header="Id_Autor" DisplayMemberBinding="{Binding Id_Autor}"/>
+                        <GridViewColumn Header="Id_Wydawnictwo" DisplayMemberBinding="{Binding Id_Wydawnictwo}"/>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>

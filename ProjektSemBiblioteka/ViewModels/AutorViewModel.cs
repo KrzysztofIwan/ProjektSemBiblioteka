@@ -18,6 +18,7 @@ namespace ProjektSemBiblioteka.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+       
         private Autor _autor;
 
         public Autor Autor
@@ -30,15 +31,15 @@ namespace ProjektSemBiblioteka.ViewModels
             }
         }
 
-        private ObservableCollection<Autor> _Listautor;
+        private ObservableCollection<Autor> _autorList;
 
-        public ObservableCollection<Autor> LstAutor
+        public ObservableCollection<Autor> AutorList
         {
-            get { return _Listautor; }
+            get { return _autorList; }
             set
             {
-                _Listautor = value;
-                OnPropertyChanged(nameof(LstAutor));
+                _autorList = value;
+                OnPropertyChanged(nameof(AutorList));
             }
         }
 
@@ -60,7 +61,7 @@ namespace ProjektSemBiblioteka.ViewModels
 
         private void LoadAutor()//read details
         {
-            LstAutor = new ObservableCollection<Autor>(autorEntities.Autor);
+            AutorList = new ObservableCollection<Autor>(autorEntities.Autor);
         }
         public ICommand DeleteCommand { get; set; }
     }

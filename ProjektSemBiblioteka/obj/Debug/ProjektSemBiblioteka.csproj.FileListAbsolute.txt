@@ -22,3 +22,5 @@ E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka.c
 E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka_Content.g.cs
 E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\AutorDetails.g.cs
 E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\AutorDetails.baml
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\LiteraturaDetails.g.cs
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\LiteraturaDetails.baml

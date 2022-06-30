@@ -47,7 +47,7 @@ namespace ProjektSemBiblioteka.Models
                 OnPropertyChanged(nameof(Id_Autor));
             }
         }
-        public int Id_Wydawnictwo { get => Id_Wydawnictwo; set
+        public int Id_Wydawnictwo { get => idWydawnictwo; set
             {
                 idWydawnictwo = value;
                 OnPropertyChanged(nameof(Id_Wydawnictwo));
