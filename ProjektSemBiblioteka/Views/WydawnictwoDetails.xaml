@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="WydawnictwoDetails" Height="450" Width="800">
     <Grid>
-        
+        <ListView ItemsSource="{Binding WydawnictwoList}">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Kategoria" DisplayMemberBinding="{Binding Nazwa}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>
