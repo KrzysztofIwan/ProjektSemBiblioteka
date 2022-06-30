@@ -20,3 +20,5 @@ E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\bin\Debug\EntityFramework.xml
 E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\bin\Debug\EntityFramework.SqlServer.xml
 E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka.csproj.CopyComplete
 E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\ProjektSemBiblioteka_Content.g.cs
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\AutorDetails.g.cs
+E:\C#\ProjektSemBiblioteka\ProjektSemBiblioteka\obj\Debug\Views\AutorDetails.baml

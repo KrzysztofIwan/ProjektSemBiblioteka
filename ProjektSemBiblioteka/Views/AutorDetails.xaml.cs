@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjektSemBiblioteka.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,18 +13,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-
 namespace ProjektSemBiblioteka.Views
 {
     /// <summary>
-    /// Interaction logic for Main.xaml
+    /// Interaction logic for AutorDetails.xaml
     /// </summary>
-    public partial class Main : Window
+    public partial class AutorDetails : Window
     {
-        public Main()
+        public AutorDetails()
         {
             InitializeComponent();
-
+            DataContext = new AutorViewModel();
         }
     }
 }
