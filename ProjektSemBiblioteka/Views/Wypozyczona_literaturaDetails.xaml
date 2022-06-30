@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="Wypozyczona_literaturaDetails" Height="450" Width="800">
     <Grid>
-        
+        <ListView ItemsSource="{Binding WypozyczonaList}">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Id_Uzytkownika" DisplayMemberBinding="{Binding Id_Uzytkownika}"/>
+                        <GridViewColumn Header="Id_Literatury" DisplayMemberBinding="{Binding Id_Literatury}"/>
+                        <GridViewColumn Header="Data_Wydania" DisplayMemberBinding="{Binding Data_Wydania}"/>
+                        <GridViewColumn Header="Okres_Wypozyczenia" DisplayMemberBinding="{Binding Okres_Wypozyczenia}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

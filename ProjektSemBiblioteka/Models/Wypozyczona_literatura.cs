@@ -39,7 +39,12 @@ namespace ProjektSemBiblioteka.Models
                 OnPropertyChanged(nameof(Data_Wydania));
             }
         }
-        public int Okres_Wypozyczenia { get; set; }
+        public int Okres_Wypozyczenia { get => okresWypozyczenia; set
+            {
+                okresWypozyczenia = value;
+                OnPropertyChanged(nameof(Okres_Wypozyczenia));
+            }
+        }
     
         public virtual Uzytkownicy Uzytkownicy { get; set; }
 
