@@ -1,1 +1,3 @@
 # ProjektSemBiblioteka
+
+# Użyte technologie: 
