@@ -7,14 +7,10 @@
         xmlns:views ="clr-namespace:ProjektSemBiblioteka.Views"
         xmlns:viewmodels ="clr-namespace:ProjektSemBiblioteka.ViewModels"
         mc:Ignorable="d"
-        Title="Aplikacja WPF" Height="640" Width="1200" FontSize="20" FontWeight="Medium" ResizeMode="NoResize"
+        Title="Aplikacja WPF" Height="575" Width="350" FontSize="20" FontWeight="Medium" ResizeMode="NoResize"
             WindowStartupLocation="CenterScreen" Background="#c1e1ff">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="240*"/>
-            <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="940*"/>
-        </Grid.ColumnDefinitions>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
             <RowDefinition/>
@@ -25,6 +21,10 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBlock TextAlignment="Center">Aplikacja Bazo Danowa</TextBlock>
+            <TextBlock TextAlignment="Center">--- Wybierz tabele ---</TextBlock>
+        </StackPanel>
         <StackPanel Grid.Row="1">
             <Button Name="Autor" Height="60" Width="175" HorizontalAlignment="Center"
                     Click="AutorShow" Background="#0066CC">
