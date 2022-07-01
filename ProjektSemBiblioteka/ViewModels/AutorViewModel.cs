@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using ProjektSemBiblioteka.Models;
 
@@ -50,27 +51,50 @@ namespace ProjektSemBiblioteka.ViewModels
         {
             autorEntities = new WypozycalniaEntities();
             LoadAutor();
-          //  DeleteCommand = new Command((s) => true,Delete);
+            DeleteCommand = new Command((s) => true, Delete);
         }
 
-        private void Delete(object obj)
+        public void Delete(object obj)
         {
             var aut = obj as Autor;
             autorEntities.Autor.Remove(aut);
+            try { autorEntities.SaveChanges(); }
+            catch(Exception) 
+            { 
+                MessageBox.Show("Nie można usunąć rekordu ponieważ istnieją z nim więcej połączeń");
+            }
+            
+            
         }
 
         private void LoadAutor()//read details
         {
             AutorList = new ObservableCollection<Autor>(autorEntities.Autor);
         }
+
         public ICommand DeleteCommand { get; set; }
-    }
-    /*class Command : ICommand
-    {
-        public Command(Func<object,bool> methodCanExecute, Action<object> methodExecute)
+
+        class Command: ICommand
         {
-            MethodCanExecute = methodCanExecute;
-            MethodExecute = methodExecute;
+            public Command(Func<object,bool> methodCanExecute, Action<object> methodExecute)
+            {
+                MethodExecute = methodExecute;
+                MethodCanExecute = methodCanExecute;
+            }
+            private Action<object> MethodExecute { get; set; }
+            private Func<object,bool> MethodCanExecute { get; set; }
+
+            public event EventHandler CanExecuteChanged;
+
+            public bool CanExecute(object parameter)
+            {
+                return MethodExecute != null && MethodCanExecute.Invoke(parameter);
+            }
+            
+            public void Execute(object parameter)
+            {
+                MethodExecute(parameter);
+            }
         }
-    }*/
+    }
 }
