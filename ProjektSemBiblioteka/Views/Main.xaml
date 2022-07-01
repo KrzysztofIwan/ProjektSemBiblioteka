@@ -25,7 +25,7 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1">
             <Button Name="Autor" Height="60" Width="175" HorizontalAlignment="Center"
-                    Click="Show" Background="#0066CC">
+                    Click="AutorShow" Background="#0066CC">
                 <Grid Width="230">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -39,7 +39,7 @@
 
         <StackPanel Grid.Row="2">
             <Button Name="Literatura" Height="60" Width="175" HorizontalAlignment="Center"
-                    Click="Show" Background="#0066CC">
+                    Click="LiteraturaShow" Background="#0066CC">
                 <Grid Width="230">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -53,7 +53,7 @@
 
         <StackPanel Grid.Row="3">
             <Button Name="Uzytkownicy" Height="60" Width="175" HorizontalAlignment="Center"
-                    Click="Show" Background="#0066CC">
+                    Click="UzytkownicyShow" Background="#0066CC">
                 <Grid Width="230">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -67,7 +67,7 @@
 
         <StackPanel Grid.Row="4">
             <Button Name="Wydawnictwa" Height="60" Width="175" HorizontalAlignment="Center"
-                    Click="Show" Background="#0066CC">
+                    Click="WydawnictwoShow" Background="#0066CC">
                 <Grid Width="230">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -81,7 +81,7 @@
 
         <StackPanel Grid.Row="5">
             <Button Name="WypozyczonaLiteratura" Height="60" Width="175" HorizontalAlignment="Center"
-                    Click="Show" Background="#0066CC">
+                    Click="WypozyczonaShow" Background="#0066CC">
                 <Grid Width="230">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -95,7 +95,7 @@
 
         <StackPanel Grid.Row="6">
             <Button Name="ZwroconaLiteratura" Height="60" Width="175" HorizontalAlignment="Center"
-                    Click="Show" Background="#0066CC">
+                    Click="ZwrotShow" Background="#0066CC">
                 <Grid Width="230">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>

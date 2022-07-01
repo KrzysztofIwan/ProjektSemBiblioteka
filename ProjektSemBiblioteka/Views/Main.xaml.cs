@@ -26,9 +26,34 @@ namespace ProjektSemBiblioteka.Views
             InitializeComponent();
         }
 
-        public void Show(object sender, RoutedEventArgs e)
+        public void AutorShow(object sender, RoutedEventArgs e)
         {
             DataContext = new AutorViewModel();
+        }
+
+        public void LiteraturaShow(object sender, RoutedEventArgs e)
+        {
+            DataContext = new LiteraturaViewModel();
+        }
+
+        public void UzytkownicyShow(object sender, RoutedEventArgs e)
+        {
+            DataContext = new UzytkownicyViewModel();
+        }
+
+        public void WydawnictwoShow(object sender, RoutedEventArgs e)
+        {
+            DataContext = new WydawnictwoViewModel();
+        }
+
+        public void WypozyczonaShow(object sender, RoutedEventArgs e)
+        {
+            DataContext = new Wypozyczona_literaturaViewModel();
+        }
+
+        public void ZwrotShow(object sender, RoutedEventArgs e)
+        {
+            DataContext = new Zwrot_literaturyViewModel();
         }
     }
 }
