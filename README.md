@@ -8,3 +8,8 @@ Użyte technologie:
 Wymagania:
  - Microsoft Visual Studio 
  - Microsoft SQL Server ( na którym znajduje się baza danych )
+
+Struktura Projektu:
+ - Folder Models ( zawiera pliki konfiguracyjne oraz klasy tabel z bazy danych )
+ - Folder ViewModels ( modele )
+ - Folder Views ( pliki widoków )
