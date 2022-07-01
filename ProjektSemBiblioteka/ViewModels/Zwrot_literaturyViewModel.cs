@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Data;
 using System.Windows.Input;
 using ProjektSemBiblioteka.Models;
 
@@ -60,6 +61,8 @@ namespace ProjektSemBiblioteka.ViewModels
             {
                 zwrotEntities.Zwrot_literatury.Remove(zw);
                 zwrotEntities.SaveChanges();
+                LoadZwrot();
+
             }
             catch (Exception)
             {

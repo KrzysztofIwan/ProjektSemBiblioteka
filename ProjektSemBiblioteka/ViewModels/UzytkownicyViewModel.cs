@@ -61,6 +61,7 @@ namespace ProjektSemBiblioteka.ViewModels
             {
                 uzytkownicyEntities.Uzytkownicy.Remove(uzy);
                 uzytkownicyEntities.SaveChanges();
+                LoadUzytkownicy();
             }
             catch (Exception)
             {

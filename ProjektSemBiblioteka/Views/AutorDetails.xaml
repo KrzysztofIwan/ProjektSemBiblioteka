@@ -7,7 +7,7 @@
         xmlns:views ="clr-namespace:ProjektSemBiblioteka.Views"
         xmlns:viewmodels ="clr-namespace:ProjektSemBiblioteka.ViewModels"
         mc:Ignorable="d"
-        Title="Aplikacja WPF - Autorzy" Height="640" Width="1200" FontSize="20" FontWeight="Medium" ResizeMode="NoResize"
+        Title="Aplikacja WPF - Autorzy" Height="640" Width="1000" FontSize="20" FontWeight="Medium" ResizeMode="NoResize"
             WindowStartupLocation="CenterScreen">
     <Grid>
         <ListView ItemsSource="{Binding AutorList}" Background="#c1e1ff">

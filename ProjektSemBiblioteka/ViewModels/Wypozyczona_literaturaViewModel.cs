@@ -57,7 +57,11 @@ namespace ProjektSemBiblioteka.ViewModels
         {
             var wyp = obj as Wypozyczona_literatura;
             wypozyczonaEntities.Wypozyczona_literatura.Remove(wyp);
-            try { wypozyczonaEntities.SaveChanges(); }
+            try 
+            { 
+                wypozyczonaEntities.SaveChanges();
+                LoadWypozyczona();
+            }
             catch (Exception)
             {
                 MessageBox.Show("Nie można usunąć rekordu ponieważ istnieją z nim więcej połączeń");

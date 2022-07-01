@@ -61,6 +61,7 @@ namespace ProjektSemBiblioteka.ViewModels
             {
                 literaturaEntities.Literatura.Remove(lit);
                 literaturaEntities.SaveChanges();
+                LoadLiteratura();
             }
             catch (Exception)
             {

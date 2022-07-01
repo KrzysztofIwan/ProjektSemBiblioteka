@@ -61,7 +61,8 @@ namespace ProjektSemBiblioteka.ViewModels
             try 
             {
                 autorEntities.Autor.Remove(aut);
-                autorEntities.SaveChanges(); 
+                autorEntities.SaveChanges();
+                LoadAutor();
             }
             catch(Exception) 
             { 

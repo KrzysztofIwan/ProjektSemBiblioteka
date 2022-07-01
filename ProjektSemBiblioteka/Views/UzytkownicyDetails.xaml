@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektSemBiblioteka.Views"
         mc:Ignorable="d"
-        Title="Aplikacja WPF - Użytkownicy" Height="640" Width="1200" FontSize="20" FontWeight="Medium" ResizeMode="NoResize"
+        Title="Aplikacja WPF - Użytkownicy" Height="640" Width="1000" FontSize="20" FontWeight="Medium" ResizeMode="NoResize"
             WindowStartupLocation="CenterScreen">
     <Grid>
         <ListView ItemsSource="{Binding UzytkownicyList}" Background="#c1e1ff">
