@@ -36,26 +36,36 @@ namespace ProjektSemBiblioteka.Views
         public void LiteraturaShow(object sender, RoutedEventArgs e)
         {
             DataContext = new LiteraturaViewModel();
+            LiteraturaDetails page = new LiteraturaDetails();
+            page.ShowDialog();
         }
 
         public void UzytkownicyShow(object sender, RoutedEventArgs e)
         {
             DataContext = new UzytkownicyViewModel();
+            UzytkownicyDetails page = new UzytkownicyDetails();
+            page.ShowDialog();
         }
 
         public void WydawnictwoShow(object sender, RoutedEventArgs e)
         {
             DataContext = new WydawnictwoViewModel();
+            WydawnictwoDetails page = new WydawnictwoDetails();
+            page.ShowDialog();
         }
 
         public void WypozyczonaShow(object sender, RoutedEventArgs e)
         {
             DataContext = new Wypozyczona_literaturaViewModel();
+            Wypozyczona_literaturaDetails page = new Wypozyczona_literaturaDetails();
+            page.ShowDialog();
         }
 
         public void ZwrotShow(object sender, RoutedEventArgs e)
         {
             DataContext = new Zwrot_literaturyViewModel();
+            Zwrot_literaturyDetails page = new Zwrot_literaturyDetails();
+            page.ShowDialog();
         }
 
         private void Literatura_TargetUpdated(object sender, DataTransferEventArgs e)
