@@ -41,7 +41,7 @@
 
         <StackPanel Grid.Row="2">
             <Button Name="Literatura" Height="60" Width="175" HorizontalAlignment="Center"
-                    Click="LiteraturaShow" Background="#0066CC">
+                    Click="LiteraturaShow" Background="#0066CC">                
                 <Grid Width="230">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>

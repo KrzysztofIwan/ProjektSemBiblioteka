@@ -29,6 +29,8 @@ namespace ProjektSemBiblioteka.Views
         public void AutorShow(object sender, RoutedEventArgs e)
         {
             DataContext = new AutorViewModel();
+            AutorDetails page = new AutorDetails();
+            page.ShowDialog();
         }
 
         public void LiteraturaShow(object sender, RoutedEventArgs e)
@@ -54,6 +56,11 @@ namespace ProjektSemBiblioteka.Views
         public void ZwrotShow(object sender, RoutedEventArgs e)
         {
             DataContext = new Zwrot_literaturyViewModel();
+        }
+
+        private void Literatura_TargetUpdated(object sender, DataTransferEventArgs e)
+        {
+
         }
     }
 }
