@@ -24,6 +24,7 @@ namespace ProjektSemBiblioteka.Views
         {
             InitializeComponent();
             DataContext = new Zwrot_literaturyViewModel();
+            grid.ReadLocalValue();
         }
     }
 }
