@@ -57,8 +57,12 @@ namespace ProjektSemBiblioteka.ViewModels
         public void Delete(object obj)
         {
             var aut = obj as Autor;
-            autorEntities.Autor.Remove(aut);
-            try { autorEntities.SaveChanges(); }
+            
+            try 
+            {
+                autorEntities.Autor.Remove(aut);
+                autorEntities.SaveChanges(); 
+            }
             catch(Exception) 
             { 
                 MessageBox.Show("Nie można usunąć rekordu ponieważ istnieją z nim więcej połączeń");

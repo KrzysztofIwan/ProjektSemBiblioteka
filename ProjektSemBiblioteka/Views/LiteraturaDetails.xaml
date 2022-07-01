@@ -12,11 +12,25 @@
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" />
                         <GridViewColumn Header="Kategoria" DisplayMemberBinding="{Binding Kategoria}"/>
                         <GridViewColumn Header="Tytul" DisplayMemberBinding="{Binding Tytul}"/>
                         <GridViewColumn Header="Id_Autor" DisplayMemberBinding="{Binding Id_Autor}"/>
                         <GridViewColumn Header="Id_Wydawnictwo" DisplayMemberBinding="{Binding Id_Wydawnictwo}"/>
+                        <GridViewColumn>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="4">
+                                        <Button Name="BtnDelete" Content="Delete" Width="100"
+                                                Height="25" Margin="10,0,0,0" 
+                                                Command="{Binding DataContext.DeleteCommand,
+                                            RelativeSource={RelativeSource AncestorType={x:Type ListView}}}"
+                                                CommandParameter="{Binding}">
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>

@@ -16,6 +16,20 @@
                         <GridViewColumn Header="Id_Literatury" DisplayMemberBinding="{Binding Id_Literatury}"/>
                         <GridViewColumn Header="Data_Wydania" DisplayMemberBinding="{Binding Data_Wydania}"/>
                         <GridViewColumn Header="Okres_Wypozyczenia" DisplayMemberBinding="{Binding Okres_Wypozyczenia}"/>
+                        <GridViewColumn>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="4">
+                                        <Button Name="BtnDelete" Content="Delete" Width="100"
+                                                Height="25" Margin="10,0,0,0" 
+                                                Command="{Binding DataContext.DeleteCommand,
+                                            RelativeSource={RelativeSource AncestorType={x:Type ListView}}}"
+                                                CommandParameter="{Binding}">
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
