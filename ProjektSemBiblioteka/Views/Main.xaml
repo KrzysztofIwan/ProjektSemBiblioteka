@@ -3,7 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProjektSemBiblioteka.Views"
+        xmlns:local="clr-namespace:ProjektSemBiblioteka"
+        xmlns:views ="clr-namespace:ProjektSemBiblioteka.Views"
+        xmlns:viewmodels ="clr-namespace:ProjektSemBiblioteka.ViewModels"
         mc:Ignorable="d"
         Title="Aplikacja WPF" Height="640" Width="1200" FontSize="20" FontWeight="Medium" ResizeMode="NoResize"
             WindowStartupLocation="CenterScreen" Background="#c1e1ff">
@@ -107,4 +109,41 @@
             </Button>
         </StackPanel>
     </Grid>
+    <Window.Resources>
+        <DataTemplate x:Name="AutorTemplate" DataType="{x:Type viewmodels:AutorViewModel}">
+            <views:AutorDetails>
+
+            </views:AutorDetails>
+        </DataTemplate>
+
+        <DataTemplate x:Name="LiteraturaTemplate" DataType="{x:Type viewmodels:LiteraturaViewModel}">
+            <views:LiteraturaDetails>
+
+            </views:LiteraturaDetails>
+        </DataTemplate>
+
+        <DataTemplate x:Name="UzytkownikTemplate" DataType="{x:Type viewmodels:UzytkownicyViewModel}">
+            <views:UzytkownicyDetails>
+
+            </views:UzytkownicyDetails>
+        </DataTemplate>
+
+        <DataTemplate x:Name="WydawnictwoTemplate" DataType="{x:Type viewmodels:WydawnictwoViewModel}">
+            <views:WydawnictwoDetails>
+
+            </views:WydawnictwoDetails>
+        </DataTemplate>
+
+        <DataTemplate x:Name="WypozyczoneTemplate" DataType="{x:Type viewmodels:Wypozyczona_literaturaViewModel}">
+            <views:Wypozyczona_literaturaDetails>
+
+            </views:Wypozyczona_literaturaDetails>
+        </DataTemplate>
+
+        <DataTemplate x:Name="ZwrotTemplate" DataType="{x:Type viewmodels:Zwrot_literaturyViewModel}">
+            <views:Zwrot_literaturyDetails>
+
+            </views:Zwrot_literaturyDetails>
+        </DataTemplate>
+    </Window.Resources>
 </Window>
