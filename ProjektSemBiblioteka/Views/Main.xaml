@@ -5,9 +5,106 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektSemBiblioteka.Views"
         mc:Ignorable="d"
-        Title="Main" Height="450" Width="800">
+        Title="Aplikacja WPF" Height="640" Width="1200" FontSize="20" FontWeight="Medium" ResizeMode="NoResize"
+            WindowStartupLocation="CenterScreen" Background="#c1e1ff">
     <Grid>
-        <StackPanel Grid.Row="1" Margin="120,0,120,60">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240*"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="940*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1">
+            <Button Name="Autor" Height="60" Width="175" HorizontalAlignment="Center"
+                    Click="Show" Background="#0066CC">
+                <Grid Width="230">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Autorzy" Grid.Column="1" HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <Button Name="Literatura" Height="60" Width="175" HorizontalAlignment="Center"
+                    Click="Show" Background="#0066CC">
+                <Grid Width="230">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Literatura" Grid.Column="1" HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3">
+            <Button Name="Uzytkownicy" Height="60" Width="175" HorizontalAlignment="Center"
+                    Click="Show" Background="#0066CC">
+                <Grid Width="230">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Użytkownicy" Grid.Column="1" HorizontalAlignment="Center"
+                           VerticalAlignment="Center" TextAlignment="Center"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4">
+            <Button Name="Wydawnictwa" Height="60" Width="175" HorizontalAlignment="Center"
+                    Click="Show" Background="#0066CC">
+                <Grid Width="230">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Wydawnictwa" Grid.Column="1" HorizontalAlignment="Center"
+                           VerticalAlignment="Center" TextAlignment="Center"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="5">
+            <Button Name="WypozyczonaLiteratura" Height="60" Width="175" HorizontalAlignment="Center"
+                    Click="Show" Background="#0066CC">
+                <Grid Width="230">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Wypożyczone" Grid.Column="1" HorizontalAlignment="Center"
+                           VerticalAlignment="Center" TextAlignment="Center"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="6">
+            <Button Name="ZwroconaLiteratura" Height="60" Width="175" HorizontalAlignment="Center"
+                    Click="Show" Background="#0066CC">
+                <Grid Width="230">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Zwrócone" Grid.Column="1" HorizontalAlignment="Center"
+                           VerticalAlignment="Center" TextAlignment="Center"/>
+                </Grid>
+            </Button>
         </StackPanel>
     </Grid>
 </Window>
