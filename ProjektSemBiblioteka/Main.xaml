@@ -7,107 +7,167 @@
         xmlns:views ="clr-namespace:ProjektSemBiblioteka.Views"
         xmlns:viewmodels ="clr-namespace:ProjektSemBiblioteka.ViewModels"
         mc:Ignorable="d"
-        Title="Aplikacja WPF" Height="575" Width="350" FontSize="20" FontWeight="Medium" ResizeMode="NoResize"
+        Title="Aplikacja WPF" Height="575" Width="420" FontSize="20" FontWeight="Medium" ResizeMode="NoResize"
             WindowStartupLocation="CenterScreen" Background="#c1e1ff">
     <Grid>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
             <TextBlock TextAlignment="Center">Aplikacja Bazo Danowa</TextBlock>
             <TextBlock TextAlignment="Center">--- Wybierz tabele ---</TextBlock>
         </StackPanel>
-        <StackPanel Grid.Row="1">
-            <Button Name="Autor" Height="60" Width="175" HorizontalAlignment="Center"
-                    Click="AutorShow" Background="#0066CC">
-                <Grid Width="230">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Autorzy" Grid.Column="1" HorizontalAlignment="Center"
+
+        <Button Name="Autor" Height="60" Width="175" HorizontalAlignment="Left"
+                    Click="AutorShow" Background="#0066CC" Margin="10,80,0,-60">
+            <Grid Width="230">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Autorzy" Grid.Column="1" HorizontalAlignment="Center"
                            VerticalAlignment="Center"/>
-                </Grid>
-            </Button>
-        </StackPanel>
+            </Grid>
+        </Button>
 
-        <StackPanel Grid.Row="2">
-            <Button Name="Literatura" Height="60" Width="175" HorizontalAlignment="Center"
-                    Click="LiteraturaShow" Background="#0066CC">                
-                <Grid Width="230">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Literatura" Grid.Column="1" HorizontalAlignment="Center"
+        <Button Name="AddAutor" Height="60" 
+                     Background="#0066CC" Margin="216,80,0,-60" HorizontalAlignment="Left" Width="175">
+            <Grid Width="230">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Dodaj Autora" Grid.Column="1" HorizontalAlignment="Center"
                            VerticalAlignment="Center"/>
-                </Grid>
-            </Button>
-        </StackPanel>
+            </Grid>
+        </Button>
 
-        <StackPanel Grid.Row="3">
-            <Button Name="Uzytkownicy" Height="60" Width="175" HorizontalAlignment="Center"
-                    Click="UzytkownicyShow" Background="#0066CC">
-                <Grid Width="230">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Użytkownicy" Grid.Column="1" HorizontalAlignment="Center"
-                           VerticalAlignment="Center" TextAlignment="Center"/>
-                </Grid>
-            </Button>
-        </StackPanel>
 
-        <StackPanel Grid.Row="4">
-            <Button Name="Wydawnictwa" Height="60" Width="175" HorizontalAlignment="Center"
-                    Click="WydawnictwoShow" Background="#0066CC">
-                <Grid Width="230">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Wydawnictwa" Grid.Column="1" HorizontalAlignment="Center"
-                           VerticalAlignment="Center" TextAlignment="Center"/>
-                </Grid>
-            </Button>
-        </StackPanel>
+        <Button Name="Literatura" Height="60" Width="175" HorizontalAlignment="Left"
+                    Click="LiteraturaShow" Background="#0066CC" Margin="11,154,0,-134">
+            <Grid Width="230">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Literatura" Grid.Column="1" HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+            </Grid>
+        </Button>
 
-        <StackPanel Grid.Row="5">
-            <Button Name="WypozyczonaLiteratura" Height="60" Width="175" HorizontalAlignment="Center"
-                    Click="WypozyczonaShow" Background="#0066CC">
-                <Grid Width="230">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Wypożyczone" Grid.Column="1" HorizontalAlignment="Center"
-                           VerticalAlignment="Center" TextAlignment="Center"/>
-                </Grid>
-            </Button>
-        </StackPanel>
+        <Button Name="AddLiteratura" Height="60" 
+                     Background="#0066CC" Margin="215,154,0,-134" HorizontalAlignment="Left" Width="175">
+            <Grid Width="230">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Dodaj Literature" Grid.Column="1" HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+            </Grid>
+        </Button>
 
-        <StackPanel Grid.Row="6">
-            <Button Name="ZwroconaLiteratura" Height="60" Width="175" HorizontalAlignment="Center"
-                    Click="ZwrotShow" Background="#0066CC">
-                <Grid Width="230">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Zwrócone" Grid.Column="1" HorizontalAlignment="Center"
+        <Button Name="Uzytkownicy" Height="60" Width="175" HorizontalAlignment="Left"
+                    Click="UzytkownicyShow" Background="#0066CC" Margin="11,232,0,-212">
+            <Grid Width="230">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Użytkownicy" Grid.Column="1" HorizontalAlignment="Center"
                            VerticalAlignment="Center" TextAlignment="Center"/>
-                </Grid>
-            </Button>
-        </StackPanel>
+            </Grid>
+        </Button>
+
+        <Button Name="AddUzytkownik" Height="60" 
+                    Background="#0066CC" Margin="215,232,0,-212" HorizontalAlignment="Left" Width="175">
+            <Grid Width="230">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Dodaj Użytkownika" Grid.Column="1" HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+            </Grid>
+        </Button>
+
+        <Button Name="Wydawnictwa" Height="60" Width="175" HorizontalAlignment="Left"
+                    Click="WydawnictwoShow" Background="#0066CC" Margin="11,317,0,-297">
+            <Grid Width="230">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Wydawnictwa" Grid.Column="1" HorizontalAlignment="Center"
+                           VerticalAlignment="Center" TextAlignment="Center"/>
+            </Grid>
+        </Button>
+
+        <Button Name="AddWydawnictwo" Height="60" 
+                     Background="#0066CC" Margin="215,317,0,-297" HorizontalAlignment="Left" Width="175">
+            <Grid Width="230">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Dodaj Wydawce" Grid.Column="1" HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+            </Grid>
+        </Button>
+
+        <Button Name="WypozyczonaLiteratura" Height="60" Width="175" HorizontalAlignment="Left"
+                    Click="WypozyczonaShow" Background="#0066CC" Margin="11,395,0,-375">
+            <Grid Width="230">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Wypożyczone" Grid.Column="1" HorizontalAlignment="Center"
+                           VerticalAlignment="Center" TextAlignment="Center"/>
+            </Grid>
+        </Button>
+
+        <Button Name="AddWypozyczone" Height="60" 
+                     Background="#0066CC" Margin="215,395,0,-375" HorizontalAlignment="Left" Width="175">
+            <Grid Width="230">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Dodaj Wypożyczenie" Grid.Column="1" HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+            </Grid>
+        </Button>
+
+
+        <Button Name="ZwroconaLiteratura" Height="60" Width="175" HorizontalAlignment="Left"
+                    Click="ZwrotShow" Background="#0066CC" Margin="13,472,0,-452">
+            <Grid Width="230">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="13*"/>
+                    <ColumnDefinition Width="22*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Zwrócone" Grid.Column="1" HorizontalAlignment="Center"
+                           VerticalAlignment="Center" TextAlignment="Center"/>
+            </Grid>
+        </Button>
+
+        <Button Name="AddZwrot" Height="60" 
+                     Background="#0066CC" Margin="216,472,0,-452" HorizontalAlignment="Left" Width="175">
+            <Grid Width="230">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Dodaj Zwrot" Grid.Column="1" HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+            </Grid>
+        </Button>
+
+
     </Grid>
     <Window.Resources>
         <DataTemplate x:Name="AutorTemplate" DataType="{x:Type viewmodels:AutorViewModel}">
