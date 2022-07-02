@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -19,8 +20,8 @@ namespace ProjektSemBiblioteka.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        
-        private Literatura _literatura;
+
+        private Literatura _literatura = new Literatura();
 
         public Literatura Literatura
         {
@@ -51,6 +52,22 @@ namespace ProjektSemBiblioteka.ViewModels
             literaturaEntities = new WypozycalniaEntities();
             LoadLiteratura();
             DeleteCommand = new Command((s) => true, Delete);
+            AddCommand = new Command((s) => true, Add);
+        }
+
+        private void Add(object obj)
+        {
+            Literatura.Id = literaturaEntities.Literatura.Count();
+            literaturaEntities.Literatura.Add(Literatura);
+            try
+            {
+                literaturaEntities.SaveChanges();
+                Literatura = new Literatura();
+            }
+            catch (DbEntityValidationException e)
+            {
+                MessageBox.Show("Podano nie właściwe dane");
+            };
         }
 
         public void Delete(object obj)
@@ -76,6 +93,7 @@ namespace ProjektSemBiblioteka.ViewModels
             LiteraturaList = new ObservableCollection<Literatura>(literaturaEntities.Literatura);
         }
         public ICommand DeleteCommand { get; set; }
+        public ICommand AddCommand { get; set; }
 
         class Command : ICommand
         {
