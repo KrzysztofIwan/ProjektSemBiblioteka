@@ -68,9 +68,9 @@ namespace ProjektSemBiblioteka.Views
             page.ShowDialog();
         }
 
-        private void Literatura_TargetUpdated(object sender, DataTransferEventArgs e)
+        private void AddAutor(object sender, DataTransferEventArgs e)
         {
-
+            
         }
     }
 }

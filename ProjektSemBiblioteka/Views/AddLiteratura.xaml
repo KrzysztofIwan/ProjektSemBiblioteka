@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektSemBiblioteka.Views"
         mc:Ignorable="d"
-        Title="AddLiteraturaDetails" Height="450" Width="800">
+        Title="Dodaj Literature" Height="360" Width="300" Background="#c1e1ff" FontSize="20">
     <Grid>
-        
+        <Button Content="Stwórz" HorizontalAlignment="Center" Margin="0,297,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="26,195,0,0" TextWrapping="Wrap" Text="ID Autora" VerticalAlignment="Top" Width="117" RenderTransformOrigin="0.622,0.591"/>
+        <TextBlock HorizontalAlignment="Left" Margin="23,97,0,0" TextWrapping="Wrap" Text="Kategoria" VerticalAlignment="Top" RenderTransformOrigin="0.51,-1.316"/>
+        <TextBlock HorizontalAlignment="Left" Margin="43,144,0,0" TextWrapping="Wrap" Text="Tytuł" VerticalAlignment="Top" RenderTransformOrigin="0.904,0.619"/>
+        <TextBlock HorizontalAlignment="Left" Margin="11,247,0,0" TextWrapping="Wrap" Text="ID Wydawnictwa" VerticalAlignment="Top"/>
+        <Label Content="Utworz nową Literature" HorizontalAlignment="Left" Margin="43,25,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="170,144,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.704,0.576"/>
+        <ComboBox HorizontalAlignment="Left" Margin="170,192,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Left" Margin="170,244,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Left" Margin="170,94,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Ksiazka"/>
+            <ComboBoxItem Content="Album"/>
+            <ComboBoxItem Content="Czasopismo"/>
+        </ComboBox>
+
     </Grid>
 </Window>
