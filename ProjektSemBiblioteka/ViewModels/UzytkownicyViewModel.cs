@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -20,7 +21,7 @@ namespace ProjektSemBiblioteka.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private Uzytkownicy _uzytkownicy;
+        private Uzytkownicy _uzytkownicy = new Uzytkownicy();
 
         public Uzytkownicy Uzytkownicy
         {
@@ -51,6 +52,22 @@ namespace ProjektSemBiblioteka.ViewModels
             uzytkownicyEntities = new WypozycalniaEntities();
             LoadUzytkownicy();
             DeleteCommand = new Command((s) => true, Delete);
+            AddUzytkownikCommand = new Command((s) =>true, Add);
+        }
+
+        private void Add(object obj)
+        {
+            Uzytkownicy.Id = uzytkownicyEntities.Uzytkownicy.Count()+1;
+            uzytkownicyEntities.Uzytkownicy.Add(Uzytkownicy);
+            try
+            {
+                uzytkownicyEntities.SaveChanges();
+                Uzytkownicy = new Uzytkownicy();
+            }
+            catch (DbEntityValidationException e)
+            {
+                Console.WriteLine(e);
+            };
         }
 
         public void Delete(object obj)
@@ -74,6 +91,8 @@ namespace ProjektSemBiblioteka.ViewModels
             UzytkownicyList = new ObservableCollection<Uzytkownicy>(uzytkownicyEntities.Uzytkownicy);
         }
         public ICommand DeleteCommand { get; set; }
+
+        public ICommand AddUzytkownikCommand { get; set; }
 
         class Command : ICommand
         {

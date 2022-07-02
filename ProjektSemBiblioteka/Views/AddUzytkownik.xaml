@@ -3,7 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProjektSemBiblioteka.Views"
+        xmlns:local="clr-namespace:ProjektSemBiblioteka.Views" 
+        xmlns:viewmodels="clr-namespace:ProjektSemBiblioteka.ViewModels" 
+        d:DataContext="{d:DesignInstance Type=viewmodels:UzytkownicyViewModel}"
         mc:Ignorable="d"
         Title="Dodaj Użytkownika" Height="400" Width="400" Background="#c1e1ff" FontSize="20" WindowStartupLocation="CenterScreen" >
     <Grid>
@@ -12,11 +14,11 @@
         <TextBlock HorizontalAlignment="Left" Margin="22,169,0,0" TextWrapping="Wrap" Text="Adres" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="22,218,0,0" TextWrapping="Wrap" Text="Telefon" VerticalAlignment="Top"/>
         <Label Content="Utwórz nowego Użytkownika" HorizontalAlignment="Left" Margin="24,10,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="139,68,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="139,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="139,168,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="139,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Stwórz" HorizontalAlignment="Left" Margin="157,277,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.384,0.582"/>
-
+        <TextBox HorizontalAlignment="Left" Margin="139,68,0,0" TextWrapping="Wrap" Text="{Binding Uzytkownicy.Imie}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="139,117,0,0" TextWrapping="Wrap" Text="{Binding Uzytkownicy.Nazwisko}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="139,168,0,0" TextWrapping="Wrap" Text="{Binding Uzytkownicy.Adres}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="139,217,0,0" TextWrapping="Wrap" Text="{Binding Uzytkownicy.Nr_Telefonu}" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Stwórz" HorizontalAlignment="Left" Margin="157,277,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.384,0.582" 
+                Command="{Binding AddUzytkownikCommand}"/>
     </Grid>
 </Window>
