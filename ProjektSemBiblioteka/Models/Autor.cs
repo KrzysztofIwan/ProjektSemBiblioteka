@@ -19,7 +19,7 @@ namespace ProjektSemBiblioteka.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Autor()
         {
-            this.Literatura = new HashSet<Literatura>();
+           this.Literatura = new HashSet<Literatura>();
         }
 
         private int id;
@@ -46,7 +46,7 @@ namespace ProjektSemBiblioteka.Models
         }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Literatura> Literatura { get; set; }
+        public  ICollection<Literatura> Literatura { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektSemBiblioteka.Views"
         mc:Ignorable="d"
-        Title="Dodaj Literature" Height="360" Width="300" Background="#c1e1ff" FontSize="20">
+        Title="Dodaj Literature" Height="400" Width="400" Background="#c1e1ff" FontSize="20" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button Content="Stwórz" HorizontalAlignment="Center" Margin="0,297,0,0" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="26,195,0,0" TextWrapping="Wrap" Text="ID Autora" VerticalAlignment="Top" Width="117" RenderTransformOrigin="0.622,0.591"/>

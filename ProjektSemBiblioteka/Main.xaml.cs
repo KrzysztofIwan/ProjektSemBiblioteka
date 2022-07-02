@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Runtime;
 
 
 namespace ProjektSemBiblioteka.Views
@@ -68,9 +69,40 @@ namespace ProjektSemBiblioteka.Views
             page.ShowDialog();
         }
 
-        private void AddAutor(object sender, DataTransferEventArgs e)
+        public void addAutor(object sender, RoutedEventArgs e)
         {
-            
+            AddAutorDetails page = new AddAutorDetails();
+            page.ShowDialog();
+        }
+
+        public void AddLiteratura(object sender, RoutedEventArgs e)
+        {
+            AddLiteraturaDetails page = new AddLiteraturaDetails();
+            page.ShowDialog();
+        }
+
+        public void AddUzytkownik(object sender, RoutedEventArgs e)
+        {
+            AddUzytkownikDetails page = new AddUzytkownikDetails();
+            page.ShowDialog();
+        }
+
+        public void AddWydawnictwo(object sender, RoutedEventArgs e)
+        {
+            AddWydawnictwo page = new AddWydawnictwo();
+            page.ShowDialog();
+        }
+
+        public void AddWypozyczona(object sender, RoutedEventArgs e)
+        {
+            AddWypozyczone page = new AddWypozyczone();
+            page.ShowDialog();
+        }
+
+        public void AddZwrot(object sender, RoutedEventArgs e)
+        {
+            AddZwroty page = new AddZwroty();
+            page.ShowDialog();
         }
     }
 }

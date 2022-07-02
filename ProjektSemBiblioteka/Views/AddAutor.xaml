@@ -3,16 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProjektSemBiblioteka.Views"
+        xmlns:local="clr-namespace:ProjektSemBiblioteka"
+        xmlns:views ="clr-namespace:ProjektSemBiblioteka.Views"
+        xmlns:viewmodels ="clr-namespace:ProjektSemBiblioteka.ViewModels" 
+        d:DataContext="{d:DesignInstance Type=viewmodels:AutorViewModel}"
         mc:Ignorable="d"
-        Title="Dodaj Autora" Height="220" Width="300" Background="#c1e1ff" FontSize="20">
+        Title="Dodaj Autora" Height="250" Width="300" Background="#c1e1ff" FontSize="20" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="152,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.501,-0.366"/>
-        <TextBox HorizontalAlignment="Left" Margin="152,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Stwórz" HorizontalAlignment="Left" Margin="113,153,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="152,52,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.501,-0.366"
+                 Text="{Binding Autor.Imie}"/>
+        <TextBox HorizontalAlignment="Left" Margin="152,99,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"
+                 Text="{Binding Autor.Nazwisko}"/>
+        <Button Content="Stwórz" HorizontalAlignment="Left" Margin="113,153,0,0" VerticalAlignment="Top"
+                Command="{Binding AddAutorCommand}"
+                />
         <TextBlock HorizontalAlignment="Left" Margin="53,53,0,0" TextWrapping="Wrap" Text="Imie" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="30,101,0,0" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top"/>
         <Label Content="Utworzenie nowego Autora" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top"/>
-
     </Grid>
 </Window>

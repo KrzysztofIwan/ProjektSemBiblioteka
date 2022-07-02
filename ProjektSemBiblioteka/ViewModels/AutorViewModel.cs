@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Runtime;
 using ProjektSemBiblioteka.Models;
+using System.Data.Entity.Validation;
 
 namespace ProjektSemBiblioteka.ViewModels
 {
@@ -19,8 +21,8 @@ namespace ProjektSemBiblioteka.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-       
-        private Autor _autor;
+
+        private Autor _autor = new Autor();
 
         public Autor Autor
         {
@@ -52,6 +54,23 @@ namespace ProjektSemBiblioteka.ViewModels
             autorEntities = new WypozycalniaEntities();
             LoadAutor();
             DeleteCommand = new Command((s) => true, Delete);
+            AddAutorCommand = new Command((s) => true, Add);
+
+        }
+
+        private void Add(object obj)
+        {           
+            Autor.Id = autorEntities.Autor.Count();
+            autorEntities.Autor.Add(Autor);
+            try
+            {
+                autorEntities.SaveChanges();
+                Autor = new Autor();
+            }
+            catch (DbEntityValidationException e)
+            {
+                Console.WriteLine(e);
+            };
         }
 
         public void Delete(object obj)
@@ -77,6 +96,9 @@ namespace ProjektSemBiblioteka.ViewModels
             AutorList = new ObservableCollection<Autor>(autorEntities.Autor);
         }
 
+
+
+        public ICommand AddAutorCommand { get; set; }
         public ICommand DeleteCommand { get; set; }
 
         class Command: ICommand

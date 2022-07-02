@@ -113,6 +113,24 @@
     <Compile Include="ViewModels\WydawnictwoViewModel.cs" />
     <Compile Include="ViewModels\Wypozyczona_literaturaViewModel.cs" />
     <Compile Include="ViewModels\Zwrot_literaturyViewModel.cs" />
+    <Compile Include="Views\AddAutor.xaml.cs">
+      <DependentUpon>AddAutor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddLiteratura.xaml.cs">
+      <DependentUpon>AddLiteratura.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddUzytkownik.xaml.cs">
+      <DependentUpon>AddUzytkownik.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddWydawnictwo.xaml.cs">
+      <DependentUpon>AddWydawnictwo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddWypozyczone.xaml.cs">
+      <DependentUpon>AddWypozyczone.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddZwroty.xaml.cs">
+      <DependentUpon>AddZwroty.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AutorDetails.xaml.cs">
       <DependentUpon>AutorDetails.xaml</DependentUpon>
     </Compile>
@@ -171,6 +189,30 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Page Include="Views\AddAutor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddLiteratura.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddUzytkownik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddWydawnictwo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddWypozyczone.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddZwroty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AutorDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
