@@ -13,3 +13,4 @@ Struktura Projektu:
  - Folder Models ( zawiera pliki konfiguracyjne oraz klasy tabel z bazy danych )
  - Folder ViewModels ( modele )
  - Folder Views ( pliki widoków )
+ - Folder DB_Script ( skrypty tworzące baze danych )
