@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -21,7 +22,7 @@ namespace ProjektSemBiblioteka.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private Zwrot_literatury _zwrot;
+        private Zwrot_literatury _zwrot = new Zwrot_literatury();
 
         public Zwrot_literatury Zwrot
         {
@@ -52,6 +53,21 @@ namespace ProjektSemBiblioteka.ViewModels
             zwrotEntities = new WypozycalniaEntities();
             LoadZwrot();
             DeleteCommand = new Command((s) => true, Delete);
+            AddCommand = new Command((s) => true, Add);
+        }
+
+        private void Add(object obj)
+        {
+            zwrotEntities.Zwrot_literatury.Add(Zwrot);
+            try
+            {
+                zwrotEntities.SaveChanges();
+                Zwrot = new Zwrot_literatury();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Podano nie właściwe dane");
+            };
         }
 
         public void Delete(object obj)
@@ -75,6 +91,7 @@ namespace ProjektSemBiblioteka.ViewModels
             ZwrotList = new ObservableCollection<Zwrot_literatury>(zwrotEntities.Zwrot_literatury);
         }
         public ICommand DeleteCommand { get; set; }
+        public ICommand AddCommand { get; set; }
 
         class Command : ICommand
         {

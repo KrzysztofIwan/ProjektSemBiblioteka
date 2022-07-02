@@ -64,7 +64,7 @@ namespace ProjektSemBiblioteka.ViewModels
                 wydawnictwoEntities.SaveChanges();
                 Wydawnictwo = new Wydawnictwo();
             }
-            catch (DbEntityValidationException e)
+            catch (Exception e)
             {
                 Console.WriteLine(e);
             };

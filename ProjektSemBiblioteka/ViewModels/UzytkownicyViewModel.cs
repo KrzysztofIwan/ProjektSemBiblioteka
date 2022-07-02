@@ -64,7 +64,7 @@ namespace ProjektSemBiblioteka.ViewModels
                 uzytkownicyEntities.SaveChanges();
                 Uzytkownicy = new Uzytkownicy();
             }
-            catch (DbEntityValidationException e)
+            catch (Exception e)
             {
                 Console.WriteLine(e);
             };

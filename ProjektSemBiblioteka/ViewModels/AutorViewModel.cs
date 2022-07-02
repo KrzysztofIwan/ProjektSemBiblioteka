@@ -67,9 +67,9 @@ namespace ProjektSemBiblioteka.ViewModels
                 autorEntities.SaveChanges();
                 Autor = new Autor();
             }
-            catch (DbEntityValidationException e)
+            catch (Exception e)
             {
-                Console.WriteLine(e);
+                MessageBox.Show("Podano nie właściwe dane");
             };
         }
 

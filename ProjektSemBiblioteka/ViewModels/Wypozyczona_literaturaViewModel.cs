@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -20,7 +21,7 @@ namespace ProjektSemBiblioteka.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private Wypozyczona_literatura _wypozyczona;
+        private Wypozyczona_literatura _wypozyczona = new Wypozyczona_literatura();
 
         public Wypozyczona_literatura Wypozyczona
         {
@@ -51,6 +52,21 @@ namespace ProjektSemBiblioteka.ViewModels
             wypozyczonaEntities = new WypozycalniaEntities();
             LoadWypozyczona();
             DeleteCommand = new Command((s) => true, Delete);
+            AddCommand = new Command((s) => true, Add);
+        }
+
+        private void Add(object obj)
+        {
+            wypozyczonaEntities.Wypozyczona_literatura.Add(Wypozyczona);
+            try
+            {
+                wypozyczonaEntities.SaveChanges();
+                Wypozyczona = new Wypozyczona_literatura();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Podano nie właściwe dane");
+            };
         }
 
         public void Delete(object obj)
@@ -73,6 +89,8 @@ namespace ProjektSemBiblioteka.ViewModels
             WypozyczonaList = new ObservableCollection<Wypozyczona_literatura>(wypozyczonaEntities.Wypozyczona_literatura);
         }
         public ICommand DeleteCommand { get; set; }
+
+        public ICommand AddCommand { get; set; }
 
         class Command : ICommand
         {

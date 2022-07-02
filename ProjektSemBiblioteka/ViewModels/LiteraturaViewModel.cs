@@ -64,7 +64,7 @@ namespace ProjektSemBiblioteka.ViewModels
                 literaturaEntities.SaveChanges();
                 Literatura = new Literatura();
             }
-            catch (DbEntityValidationException e)
+            catch (Exception e)
             {
                 MessageBox.Show("Podano nie właściwe dane");
             };
