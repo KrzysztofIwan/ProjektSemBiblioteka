@@ -243,6 +243,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DB_Script\create.sql" />
+    <Content Include="DB_Script\insert into.sql" />
     <Content Include="Models\DBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBModel.edmx</DependentUpon>

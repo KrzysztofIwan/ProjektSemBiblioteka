@@ -21,7 +21,7 @@
             <ComboBoxItem Content="Album"/>
             <ComboBoxItem Content="Czasopismo"/>
         </ComboBox>
-        <TextBox HorizontalAlignment="Left" Margin="170,195,0,0" TextWrapping="Wrap" Text="{Binding Literatura.Id_Autor}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="170,192,0,0" TextWrapping="Wrap" Text="{Binding Literatura.Id_Autor}" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Margin="170,245,0,0" TextWrapping="Wrap" Text="{Binding Literatura.Id_Wydawnictwo}" VerticalAlignment="Top" Width="120"/>
 
     </Grid>

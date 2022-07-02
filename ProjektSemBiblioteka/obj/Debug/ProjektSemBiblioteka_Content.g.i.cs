@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("db_script/create.sql")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("db_script/insert%20into.sql")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/dbmodel.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/dbmodel.tt")]
 

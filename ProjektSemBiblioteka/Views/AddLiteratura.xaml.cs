@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ProjektSemBiblioteka.ViewModels;
+using ProjektSemBiblioteka.Models;
 
 namespace ProjektSemBiblioteka.Views
 {
@@ -23,7 +24,7 @@ namespace ProjektSemBiblioteka.Views
         public AddLiteraturaDetails()
         {
             InitializeComponent();
-            DataContext = new LiteraturaViewModel();           
+            DataContext = new LiteraturaViewModel();
         }
     }
 }

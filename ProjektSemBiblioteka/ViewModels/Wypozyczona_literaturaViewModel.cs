@@ -63,7 +63,7 @@ namespace ProjektSemBiblioteka.ViewModels
                 wypozyczonaEntities.SaveChanges();
                 Wypozyczona = new Wypozyczona_literatura();
             }
-            catch (Exception e)
+            catch (DbEntityValidationException e)
             {
                 MessageBox.Show("Podano nie właściwe dane");
             };
