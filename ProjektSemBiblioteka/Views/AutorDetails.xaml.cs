@@ -27,4 +27,6 @@ namespace ProjektSemBiblioteka.Views
             DataContext = new AutorViewModel();
         }
     }
+
+   
 }
