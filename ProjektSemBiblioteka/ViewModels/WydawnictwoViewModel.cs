@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -20,7 +21,7 @@ namespace ProjektSemBiblioteka.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private Wydawnictwo _wydawnictwo;
+        private Wydawnictwo _wydawnictwo = new Wydawnictwo();
 
         public Wydawnictwo Wydawnictwo
         {
@@ -51,6 +52,22 @@ namespace ProjektSemBiblioteka.ViewModels
             wydawnictwoEntities = new WypozycalniaEntities();
             LoadLiteratura();
             DeleteCommand = new Command((s) => true, Delete);
+            AddWydawnictwo = new Command((s) => true, Add);
+        }
+
+        private void Add(object obj)
+        {
+            Wydawnictwo.Id = wydawnictwoEntities.Autor.Count();
+            wydawnictwoEntities.Wydawnictwo.Add(Wydawnictwo);
+            try
+            {
+                wydawnictwoEntities.SaveChanges();
+                Wydawnictwo = new Wydawnictwo();
+            }
+            catch (DbEntityValidationException e)
+            {
+                Console.WriteLine(e);
+            };
         }
 
         public void Delete(object obj)
@@ -75,6 +92,7 @@ namespace ProjektSemBiblioteka.ViewModels
             WydawnictwoList = new ObservableCollection<Wydawnictwo>(wydawnictwoEntities.Wydawnictwo);
         }
         public ICommand DeleteCommand { get; set; }
+        public ICommand AddWydawnictwo { get; set; }
 
         class Command : ICommand
         {
